@@ -44,11 +44,6 @@ public class Movement : MonoBehaviour
 
     }
     
-    
-    
-    
-    
-    
     void ProcessRotation()
     {   
         //rotate

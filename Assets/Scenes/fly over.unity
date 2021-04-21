@@ -292,29 +292,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.43, y: 2.9, z: -15.05}
+  m_LocalPosition: {x: 0.53, y: 2.9, z: -15.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1155996475 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2384039891692143882, guid: ce483776058c830459f951dffb4822ce, type: 3}
-  m_PrefabInstance: {fileID: 5209156461751635383}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1155996483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1155996475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 830143c0cb8dcda488d82339877cd5b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4566186004934085804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -379,10 +362,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1155996482, guid: ce483776058c830459f951dffb4822ce, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2384039891692143882, guid: ce483776058c830459f951dffb4822ce, type: 3}
       propertyPath: m_Name
       value: rocket body
