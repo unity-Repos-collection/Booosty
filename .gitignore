@@ -69,3 +69,7 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/AllSkyFree/
+Assets/LowPoly Rocks/
+Assets/materials/Free/
+Assets/prefabs/AtomRocket/Mesh/Materials/Fins.mat
