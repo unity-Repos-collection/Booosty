@@ -10,19 +10,25 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] ParticleSystem SuccessParticle;
     [SerializeField] ParticleSystem CrashParticle;
     AudioSource As;
+    Rigidbody rb;
 
-    
-    
     bool isAlive = false;
     
+    bool DisableCollider = false;  
     void Start() 
     {
     As = GetComponent<AudioSource>();
-    
+    rb = GetComponent<Rigidbody>();
     }
+    
+    void Update() 
+    {
+    debugKeys();
+    }
+    
     void OnCollisionEnter(Collision other) 
     {
-        if (isAlive){return;}   
+        if (isAlive || DisableCollider){return;}   
     
         switch (other.gameObject.tag)
         {      
@@ -80,6 +86,17 @@ public class CollisionHandler : MonoBehaviour
         GetComponent<Movement>().enabled = false;
         Invoke("NextLevel", Delay);
     }
-
+    void debugKeys()
+    {
+        if (Input.GetKey(KeyCode.L))        
+        {
+            NextLevel();
+        }
+        else if (Input.GetKeyDown(KeyCode.C))
+        { 
+            DisableCollider = !DisableCollider; //toggle collision  
+              
+        }
+    }
 
 }

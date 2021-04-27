@@ -13,13 +13,11 @@ public class Movement : MonoBehaviour
     Rigidbody rb;
 
     
-    
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         As = GetComponent<AudioSource>();
-        
     }
 
     // Update is called once per frame
@@ -33,41 +31,55 @@ public class Movement : MonoBehaviour
     {
         //thrust
         if(Input.GetKey(KeyCode.Space))
-        {   
-            rb.AddRelativeForce(Vector3.up * Thrust * Time.deltaTime);
-            if(!As.isPlaying)
-            {   
-                ThrustParticle.Play(ThrustParticle);
-                As.PlayOneShot(ThrustSound);
-            }
-            
-        }               
+        {
+            StartThrusting();
+        }
         else
         {
-            As.Stop(); 
+            StopThrustAudio();
         }
-        
+    }
+    void StopThrustAudio()
+    {
+        As.Stop();
+        ThrustParticle.Stop();
+    }
+    void StartThrusting()
+    {
+        rb.AddRelativeForce(Vector3.up * Thrust * Time.deltaTime);
+        if (!As.isPlaying)
+        {
+            As.PlayOneShot(ThrustSound);
+        }
+        if (!ThrustParticle.isPlaying)
+        {
+            ThrustParticle.Play();
+        }
+    }
+
+    void ProcessRotation()
+    {
+        ProcessLeftRight();
 
     }
-    
-    void ProcessRotation()
-    {   
+
+    void ProcessLeftRight()
+    {
         //rotate
-        if(Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             ApplyRotation(Rotate);
         }
-        else if(Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D))
         {
             ApplyRotation(-Rotate);
         }
-
     }
-
     void ApplyRotation(float RotationThisFrame)
     {   
         rb.freezeRotation = true; //freezing rotation so manually rotate
         transform.Rotate(Vector3.forward * RotationThisFrame * Time.deltaTime);
         rb.freezeRotation = false;
     }
+    
 }
